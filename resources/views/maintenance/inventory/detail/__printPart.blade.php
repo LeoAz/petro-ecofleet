@@ -24,7 +24,8 @@
             <div class="invoice-wrap">
                 <div>
                     <div class="col-md-6">
-                        <h1>PETRO BAMA</h1>
+                        <img src="{{ asset('assets/images/logo.png') }}" alt="Logo" class="h-100px">
+                        <h1>PETRO GO</h1>
                     </div>
                     <div class="text-right fs-20px ff-mono">
                         <p class="mb-3 text-right">Bamako le {{ now()->format('d/m/Y') }}</p>

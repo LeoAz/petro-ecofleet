@@ -24,7 +24,7 @@
             <div class="invoice-wrap">
                 <div>
                     <div class="col-md-6">
-                        <h1>PETRO BAMA</h1>
+                        <h1>PETRO GO</h1>
                     </div>
                     <div class="text-right mb-5 h-25 w-200">
                         {!! QrCode::size(100)->generate( $order->uuid); !!}
