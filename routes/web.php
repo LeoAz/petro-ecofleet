@@ -440,6 +440,8 @@ Route::group(['middleware' => 'auth'], function () {
                 function (){
                     Route::get('/', [FolderController::class, 'index'])->name('index');
                     Route::post('/store', [FolderController::class, 'store'])->name('store');
+                    Route::get('/{folder:uuid}/edit', [FolderController::class, 'edit'])->name('edit');
+                    Route::put('/{folder:uuid}/update', [FolderController::class, 'update'])->name('update');
                     Route::get('/{folder:uuid}', [FolderController::class, 'show'])->name('details');
                     Route::put('/{folder:uuid}', [FolderController::class, 'closed'])->name('closed');
                     Route::put('/{folder:uuid}/open', [FolderController::class, 'opened'])->name('open');
