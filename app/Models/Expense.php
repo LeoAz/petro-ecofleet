@@ -25,7 +25,8 @@ class Expense extends Model
 
     protected $casts = [
         'date_expense' => 'datetime',
-        'is_tier' => 'boolean'
+        'is_tier' => 'boolean',
+        'status' => \App\Enums\Exploitation\ExpenseStatus::class
     ];
 
     protected $with = ['type', 'trip.vehicle'];
