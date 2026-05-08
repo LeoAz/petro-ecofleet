@@ -575,7 +575,7 @@ Route::group(['middleware' => 'auth'], function () {
             ], function (){
                 Route::get('/', [FuelListController::class, 'index'])->name('index');
                 Route::get('/{fuel:uuid}/print', [FuelListController::class, 'printfuel'])->name('print');
-                Route::post('/print-selected', [FuelListController::class, 'printSelected'])->name('print-selected');
+                Route::any('/print-selected', [FuelListController::class, 'printSelected'])->name('print-selected');
             });
 
             // load list route
@@ -594,7 +594,7 @@ Route::group(['middleware' => 'auth'], function () {
             ], function (){
                 Route::get('/', [ExpenseListController::class, 'index'])->name('index');
                 Route::get('/{expense:uuid}/print', [ExpenseListController::class, 'printexpense'])->name('print');
-                Route::post('/print-selected', [ExpenseListController::class, 'printSelected'])->name('print-selected');
+                Route::any('/print-selected', [ExpenseListController::class, 'printSelected'])->name('print-selected');
                 Route::put('/{expense:uuid}/toggle-status', [ExpenseListController::class, 'toggleStatus'])->name('toggle-status');
             });
 
