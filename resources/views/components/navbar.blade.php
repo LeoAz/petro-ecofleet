@@ -74,9 +74,6 @@
                                 <a href="{{ route('exploitation.sale.index') }}" class="nk-menu-link" data-original-title="" title=""><span class="nk-menu-text">Facturation dossier</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="{{ route('exploitation.daily-expense.index') }}" class="nk-menu-link" data-original-title="" title=""><span class="nk-menu-text">Dépense Journaliere</span></a>
-                            </li>
-                            <li class="nk-menu-item">
                                 <a href="{{ route('exploitation.expense.index') }}" class="nk-menu-link" data-original-title="" title=""><span class="nk-menu-text">Dépense de voyage</span></a>
                             </li>
                         </ul><!-- .nk-menu-sub -->
