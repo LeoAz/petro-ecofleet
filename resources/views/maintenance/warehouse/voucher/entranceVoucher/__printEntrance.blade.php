@@ -15,6 +15,19 @@
     <link rel="stylesheet" href="{{ asset('assets/css/dashlite.css?ver=2.9.0') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/theme.css?ver=2.9.0') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/skins/theme-egyptian.css') }}">
+    <style>
+        @media print {
+            .table-print th, .table-print td, .table th, .table td {
+                font-size: 16px !important;
+            }
+            .fs-12px, .fs-14px {
+                font-size: 16px !important;
+            }
+        }
+        .table th, .table td {
+            font-size: 16px;
+        }
+    </style>
 </head>
 
 <body class="bg-white" onload="printPromot()">
