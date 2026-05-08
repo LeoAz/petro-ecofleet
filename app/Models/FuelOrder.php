@@ -21,11 +21,13 @@ class FuelOrder extends Model
         'total_price',
         'supply_id',
         'is_tier',
+        'status',
     ];
 
     protected $casts = [
         'date_order' => 'datetime',
-        'is_tier' => 'boolean'
+        'is_tier' => 'boolean',
+        'status' => \App\Enums\Fueling\FuelOrderStatus::class,
     ];
 
     protected $with = ['trip'];
