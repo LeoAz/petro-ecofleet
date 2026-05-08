@@ -577,6 +577,7 @@ Route::group(['middleware' => 'auth'], function () {
                 Route::get('/', [FuelListController::class, 'index'])->name('index');
                 Route::get('/{fuel:uuid}/print', [FuelListController::class, 'printfuel'])->name('print');
                 Route::any('/print-selected', [FuelListController::class, 'printSelected'])->name('print-selected');
+                Route::put('/{fuel:uuid}/toggle-status', [FuelListController::class, 'toggleStatus'])->name('toggle-status');
             });
 
             // load list route
