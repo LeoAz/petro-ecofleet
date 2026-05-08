@@ -537,7 +537,7 @@ Route::group(['middleware' => 'auth'], function () {
                 Route::put('/{other:uuid}', [OtherExpenseController::class, 'update'])->name('update');
                 Route::delete('/{other:uuid}', [OtherExpenseController::class, 'delete'])->name('delete');
                 Route::get('/{other:uuid}/print', [OtherExpenseController::class, 'printOtherExpense'])->name('print');
-                Route::any('/print-selected', [OtherExpenseController::class, 'printSelected'])->name('print-selected');
+                Route::post('/print-selected', [OtherExpenseController::class, 'printSelected'])->name('print-selected');
             });
 
             // suppling route
