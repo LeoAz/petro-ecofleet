@@ -537,7 +537,7 @@ Route::group(['middleware' => 'auth'], function () {
                 Route::put('/{other:uuid}', [OtherExpenseController::class, 'update'])->name('update');
                 Route::delete('/{other:uuid}', [OtherExpenseController::class, 'delete'])->name('delete');
                 Route::get('/{other:uuid}/print', [OtherExpenseController::class, 'printOtherExpense'])->name('print');
-                Route::any('/print-bulk', [OtherExpenseController::class, 'printSelected'])->name('print-bulk');
+                Route::match(['GET', 'POST'], '/print-bulk', [OtherExpenseController::class, 'printSelected'])->name('print-bulk');
             });
 
             // suppling route
@@ -576,7 +576,7 @@ Route::group(['middleware' => 'auth'], function () {
             ], function (){
                 Route::get('/', [FuelListController::class, 'index'])->name('index');
                 Route::get('/{fuel:uuid}/print', [FuelListController::class, 'printfuel'])->name('print');
-                Route::any('/print-bulk', [FuelListController::class, 'printSelected'])->name('print-bulk');
+                Route::match(['GET', 'POST'], '/print-bulk', [FuelListController::class, 'printSelected'])->name('print-bulk');
                 Route::put('/{fuel:uuid}/toggle-status', [FuelListController::class, 'toggleStatus'])->name('toggle-status');
             });
 
@@ -596,7 +596,7 @@ Route::group(['middleware' => 'auth'], function () {
             ], function (){
                 Route::get('/', [ExpenseListController::class, 'index'])->name('index');
                 Route::get('/{expense:uuid}/print', [ExpenseListController::class, 'printexpense'])->name('print');
-                Route::any('/print-bulk', [ExpenseListController::class, 'printSelected'])->name('print-bulk');
+                Route::match(['GET', 'POST'], '/print-bulk', [ExpenseListController::class, 'printSelected'])->name('print-bulk');
                 Route::put('/{expense:uuid}/toggle-status', [ExpenseListController::class, 'toggleStatus'])->name('toggle-status');
             });
 
