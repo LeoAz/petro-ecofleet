@@ -21,7 +21,8 @@ class OtherExpense extends Model
         'beneficiary',
         'box_id',
         'amount',
-        'recap_id'
+        'recap_id',
+        'provider_id'
     ];
 
     protected $casts = [
@@ -46,6 +47,11 @@ class OtherExpense extends Model
     public function box()
     {
         return $this->belongsTo(Cashbox::class, 'box_id');
+    }
+
+    public function provider()
+    {
+        return $this->belongsTo(Provider::class);
     }
 
     public function daily()

@@ -20,7 +20,8 @@ class Expense extends Model
         'box_id',
         'amount',
         'recap_id',
-        'is_tier'
+        'is_tier',
+        'provider_id'
     ];
 
     protected $casts = [
@@ -49,6 +50,11 @@ class Expense extends Model
     public function type()
     {
         return $this->belongsTo(Type::class);
+    }
+
+    public function provider()
+    {
+        return $this->belongsTo(Provider::class);
     }
 
     public function box()
