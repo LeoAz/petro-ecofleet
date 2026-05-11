@@ -1,12 +1,12 @@
 @extends('layout.app')
 @section('content')
-    {{ Breadcrumbs::render('driver') }}
     @include('layout.partials.flash')
 
     <div class="nk-block nk-block-lg">
         <div class="nk-block-head nk-block-head-sm">
             <div class="nk-block-between">
                 <div class="nk-block-head-content">
+                    {{ Breadcrumbs::render('maintenance.entretien') }}
                     <h5 class="nk-block-title">
                         <em class="icon ni ni-pen"></em>
                         Modifier les informations de la maintenance

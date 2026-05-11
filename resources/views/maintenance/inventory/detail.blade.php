@@ -1,14 +1,17 @@
 @extends('layout.app')
 @section('content')
-    {{ Breadcrumbs::render('driver') }}
+    <div class="nk-block-head nk-block-head-sm">
+        <div class="nk-block-between">
+            <div class="nk-block-head-content">
+                {{ Breadcrumbs::render('maintenance') }}
+                <h5 class="nk-block-title">
+                    Détails Inventaire
+                </h5>
+            </div>
+        </div>
+    </div>
     @include('layout.partials.flash')
     <div class="nk-block nk-block-lg">
-        <div class="nk-block-head-sub mb-5">
-            <a class="back-to page-title" href="{{ route('maintenance.inventory.index') }}">
-                <em class="icon ni ni-arrow-left"></em>
-                <span>Retour inventaire</span>
-            </a>
-        </div>
         <div class="nk-block-head nk-block-head-sm">
             <div class="card">
                 <div class="card-inner">

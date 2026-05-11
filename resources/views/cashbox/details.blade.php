@@ -1,70 +1,67 @@
 @extends('layout.app')
 @section('content')
-    {{ Breadcrumbs::render('driver') }}
-    @include('layout.partials.flash')
-    <div class="nk-block-head-sub mb-5">
-        <a class="back-to" href="{{ route('cashbox.index') }}">
-            <em class="icon ni ni-arrow-left"></em>
-            <span style="font-size: 25px">Retour Caisse</span>
-        </a>
-    </div>
-    <div class="nk-block-between mb-3">
-        <div class="nk-block-head-content">
-            <h6 class="title">
-                <em class="icon ni ni-file-text"></em>
-                Situation des opérations de la caisse du {{ $box->start_at->format('d/m/Y') }}
-            </h6>
-            <p>Ci-dessous les listes des opérations effectués</p>
-        </div>
-        <!-- .nk-block-head-content -->
-        <div class="nk-block-head-content">
-            <div class="toggle-wrap nk-block-tools-toggle">
-                <a href="#" class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu"><em
-                        class="icon ni ni-menu-alt-r"></em></a>
-                <div class="toggle-expand-content" data-content="pageMenu">
-                    <ul class="nk-block-tools g-3">
-                        @if( ! $box->status == \App\Enums\CashboxStatus::Closed)
-                            <li class="nk-block-tools-opt">
-                                <a href="#" class="btn btn-sm btn-dim btn-primary"
-                                   data-toggle="modal" data-target="#create-state"
-                                >
-                                    <em class="icon ni ni-coin"></em>
-                                    <span> Appro caisse</span>
-                                </a>
-                            </li>
-                            <li class="nk-block-tools-opt">
-                                <a href="#" class="btn btn-sm btn-info"
-                                   data-toggle="modal" data-target="#create-out"
-                                >
-                                    <em class="icon ni ni-coin"></em>
-                                    <span>Autre décaissement</span>
-                                </a>
-                            </li>
-                            <li class="nk-block-tools-opt">
-                                <a href="{{ route('cashbox.operation', $box->uuid) }}"
-                                   class="btn btn-sm btn-dim btn-primary" target="_blank">
-                                    <em class="icon ni ni-coins"></em>
-                                    <span> Effectuer des paiements</span>
-                                </a>
-                            </li>
-                            <li class="nk-block-tools-opt">
-                                <a href="#" class="btn btn-sm btn-dim btn-danger"
-                                   onclick="event.preventDefault();
-                                   document.getElementById('closed-form').submit();"
-                                >
-                                    <em class="icon ni ni-lock"></em>
-                                    <span> Clôturer la caisse</span>
-                                </a>
-                                <form id="closed-form" action="{{ route('cashbox.box-closed', $box->uuid) }}" method="post">
-                                    @csrf
-                                </form>
-                            </li>
-                        @endif
-                    </ul>
+    <div class="nk-block-head nk-block-head-sm">
+        <div class="nk-block-between">
+            <div class="nk-block-head-content">
+                {{ Breadcrumbs::render('cashbox') }}
+                <h5 class="nk-block-title">
+                    <em class="icon ni ni-file-text"></em>
+                    Situation des opérations de la caisse du {{ $box->start_at->format('d/m/Y') }}
+                </h5>
+                <div class="nk-block-des text-soft">
+                    <p>Ci-dessous les listes des opérations effectués</p>
                 </div>
-            </div><!-- .toggle-wrap -->
-        </div><!-- .nk-block-head-content -->
+            </div>
+            <div class="nk-block-head-content">
+                <div class="toggle-wrap nk-block-tools-toggle">
+                    <a href="#" class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu"><em
+                            class="icon ni ni-menu-alt-r"></em></a>
+                    <div class="toggle-expand-content" data-content="pageMenu">
+                        <ul class="nk-block-tools g-3">
+                            @if( ! $box->status == \App\Enums\CashboxStatus::Closed)
+                                <li class="nk-block-tools-opt">
+                                    <a href="#" class="btn btn-sm btn-dim btn-primary"
+                                       data-toggle="modal" data-target="#create-state"
+                                    >
+                                        <em class="icon ni ni-coin"></em>
+                                        <span> Appro caisse</span>
+                                    </a>
+                                </li>
+                                <li class="nk-block-tools-opt">
+                                    <a href="#" class="btn btn-sm btn-info"
+                                       data-toggle="modal" data-target="#create-out"
+                                    >
+                                        <em class="icon ni ni-coin"></em>
+                                        <span>Autre décaissement</span>
+                                    </a>
+                                </li>
+                                <li class="nk-block-tools-opt">
+                                    <a href="{{ route('cashbox.operation', $box->uuid) }}"
+                                       class="btn btn-sm btn-dim btn-primary" target="_blank">
+                                        <em class="icon ni ni-coins"></em>
+                                        <span> Effectuer des paiements</span>
+                                    </a>
+                                </li>
+                                <li class="nk-block-tools-opt">
+                                    <a href="#" class="btn btn-sm btn-dim btn-danger"
+                                       onclick="event.preventDefault();
+                                   document.getElementById('closed-form').submit();"
+                                    >
+                                        <em class="icon ni ni-lock"></em>
+                                        <span> Clôturer la caisse</span>
+                                    </a>
+                                    <form id="closed-form" action="{{ route('cashbox.box-closed', $box->uuid) }}" method="post">
+                                        @csrf
+                                    </form>
+                                </li>
+                            @endif
+                        </ul>
+                    </div>
+                </div><!-- .toggle-wrap -->
+            </div>
+        </div>
     </div>
+    @include('layout.partials.flash')
     <div class="row g-gs">
         <div class="col-sm-8">
             <div class="card shadow-sm">

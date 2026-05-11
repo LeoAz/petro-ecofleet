@@ -1,16 +1,10 @@
 @extends('layout.app')
 @section('content')
-    {{ Breadcrumbs::render('driver') }}
     @include('layout.partials.flash')
     <div class="nk-block-head">
-        <div class="nk-block-head-sub mb-5">
-            <a class="back-to page-title" href="{{ URL::previous() }}">
-                <em class="icon ni ni-arrow-left"></em>
-                <span>Retour</span>
-            </a>
-        </div>
         <div class="nk-block-between g-3">
             <div class="nk-block-head-content">
+                {{ Breadcrumbs::render('warehouse') }}
                 <h3 class="nk-block-title page-title">Bon de sortie <strong class="text-primary small">#{{ $exit->code }}</strong></h3>
                 <div class="nk-block-des text-soft">
                     <ul class="list-inline">

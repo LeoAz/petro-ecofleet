@@ -1,25 +1,17 @@
 @extends('layout.app')
 @section('content')
-    {{ Breadcrumbs::render('driver') }}
-    @include('layout.partials.flash')
-    <div class="nk-block-head-sub mb-5">
-        <a class="back-to" href="{{ route('cashbox.detail', $box->uuid) }}">
-            <em class="icon ni ni-arrow-left"></em>
-            <span style="font-size: 25px">Retour Caisse</span>
-        </a>
-    </div>
-
-    <div class="nk-block nk-block-lg">
-        <div class="nk-block-head nk-block-head-sm">
-            <div class="nk-block-between">
-                <div class="nk-block-head-content">
-                    <h5 class="nk-block-title">
-                        <em class="icon ni ni-pen"></em>
-                        Modifier la dépense
-                    </h5>
-                </div>
-            </div><!-- .nk-block-between -->
+    <div class="nk-block-head nk-block-head-sm">
+        <div class="nk-block-between">
+            <div class="nk-block-head-content">
+                {{ Breadcrumbs::render('cashbox') }}
+                <h5 class="nk-block-title">
+                    <em class="icon ni ni-pen"></em>
+                    Modifier la dépense
+                </h5>
+            </div>
         </div>
+    </div>
+    @include('layout.partials.flash')
 
         <div class="card shadow-sm">
             <div class="card-inner">

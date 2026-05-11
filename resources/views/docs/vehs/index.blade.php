@@ -5,13 +5,12 @@
 @stop
 
 @section('content')
-    {{ Breadcrumbs::render('trajet') }}
     @include('layout.partials.flash')
-
     <div class="nk-block nk-block-lg">
         <div class="nk-block-head nk-block-head-sm">
             <div class="nk-block-between">
                 <div class="nk-block-head-content">
+                    {{ Breadcrumbs::render('docs') }}
                     <h5 class="nk-block-title">
                         <em class="icon ni ni-list"></em>
                         Liste des véhicules possédant des documents

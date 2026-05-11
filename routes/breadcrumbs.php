@@ -150,6 +150,90 @@ try {
     $trail->push('Exploitation', route('exploitation.index'))
     );
 
+    // Administration
+    Breadcrumbs::for('admin', fn ($trail) =>
+    $trail->push('Administration', '#')
+    );
+
+    // Administration > Utilisateurs
+    Breadcrumbs::for('user', fn ($trail) =>
+    $trail->parent('admin')
+        ->push('Utilisateurs', route('admin.user.index'))
+    );
+
+    // Administration > Paramètres
+    Breadcrumbs::for('setting', function ($trail) {
+        $trail->parent('admin');
+        $trail->push('Paramètres', route('admin.user.setting'));
+    });
+
+    // Administration > Rôles
+    Breadcrumbs::for('role', function ($trail) {
+        $trail->parent('admin');
+        $trail->push('Rôles', route('admin.role.index'));
+    });
+
+    // Administration > Permissions
+    Breadcrumbs::for('permission', function ($trail) {
+        $trail->parent('admin');
+        $trail->push('Permissions', route('admin.permission.index'));
+    });
+
+    // Caisse
+    Breadcrumbs::for('cashbox', function ($trail) {
+        $trail->push('Caisse', route('cashbox.index'));
+    });
+
+    // Maintenance
+    Breadcrumbs::for('maintenance', function ($trail) {
+        $trail->push('Maintenance', '#');
+    });
+
+    // Maintenance > Garage
+    Breadcrumbs::for('garage', function ($trail) {
+        $trail->parent('maintenance');
+        $trail->push('Garage', route('maintenance.garage.index'));
+    });
+
+    // Maintenance > Entretien
+    Breadcrumbs::for('maintenance.entretien', function ($trail) {
+        $trail->parent('maintenance');
+        $trail->push('Entretien', route('maintenance.entretien.index'));
+    });
+
+    // Maintenance > Accident
+    Breadcrumbs::for('maintenance.accident', function ($trail) {
+        $trail->parent('maintenance');
+        $trail->push('Accident', route('maintenance.accident.index'));
+    });
+
+    // Maintenance > Magasin
+    Breadcrumbs::for('warehouse', function ($trail) {
+        $trail->parent('maintenance');
+        $trail->push('Magasin', route('maintenance.warehouse.part.index'));
+    });
+
+    // Ventes
+    Breadcrumbs::for('sale', function ($trail) {
+        $trail->push('Ventes', route('exploitation.sale.index'));
+    });
+
+    // Documents
+    Breadcrumbs::for('docs', function ($trail) {
+        $trail->push('Documents', '#');
+    });
+
+    // Reporting
+    Breadcrumbs::for('reporting', function ($trail) {
+        $trail->push('Reporting', route('reporting.index'));
+    });
+
+    // Clients
+    Breadcrumbs::for('customer', function ($trail) {
+        $trail->parent('exploitation');
+        $trail->push('Clients', route('exploitation.customer.index'));
+    });
+
     /*
     |--------------------------------------------------------------------------
     | Exploitation breadcrumbs

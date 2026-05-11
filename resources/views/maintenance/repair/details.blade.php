@@ -1,10 +1,9 @@
 @extends('layout.app')
 @section('content')
-    {{ Breadcrumbs::render('driver') }}
-    @include('layout.partials.flash')
     <div class="nk-block-head">
         <div class="nk-block-between g-3">
             <div class="nk-block-head-content">
+                {{ Breadcrumbs::render('maintenance') }}
                 <h3 class="nk-block-title page-title">Réparation <strong class="text-primary small">#{{ $repair->code }}</strong></h3>
                 <div class="nk-block-des text-soft">
                     <ul class="list-inline">

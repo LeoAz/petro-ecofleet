@@ -1,10 +1,10 @@
 @extends('layouts.admin.app')
 @section('content')
-    {{ Breadcrumbs::render('setting') }}
     <div class="nk-block nk-block-lg">
         <div class="nk-block-head nk-block-head-sm">
             <div class="nk-block-between">
                 <div class="nk-block-head-content">
+                    {{ Breadcrumbs::render('setting') }}
                     <h4 class="nk-block-title">
                         <em class="icon ni ni-setting"></em>
                         Paramêtre de l'utilisateur - <u>{{ $user->name }}</u>

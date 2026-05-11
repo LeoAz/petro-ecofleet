@@ -1,16 +1,11 @@
 @extends('layout.app')
 @section('content')
-    {{ Breadcrumbs::render('driver') }}
+    @include('layout.partials.flash')
     <div class="nk-block nk-block-lg">
-        <div class="nk-block-head-sub mb-5">
-            <a class="back-to page-title" href="{{ route('maintenance.warehouse.index') }}">
-                <em class="icon ni ni-arrow-left"></em>
-                <span>Retour Magasin</span>
-            </a>
-        </div>
         <div class="nk-block-head nk-block-head-sm">
             <div class="nk-block-between">
                 <div class="nk-block-head-content">
+                    {{ Breadcrumbs::render('warehouse') }}
                     <h5 class="nk-block-title">
                         <em class="icon ni ni-file-text"></em>
                         Liste des bons de sortie en stock

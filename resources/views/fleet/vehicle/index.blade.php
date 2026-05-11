@@ -1,8 +1,33 @@
 @extends('layout.app')
 
 @section('content')
-    {{ Breadcrumbs::render('vehicle') }}
     @include('layout.partials.flash')
+    <div class="nk-block-head nk-block-head-sm">
+        <div class="nk-block-between">
+            <div class="nk-block-head-content">
+                {{ Breadcrumbs::render('vehicle') }}
+                <h3 class="nk-block-title page-title">Parc Automobile</h3>
+                <div class="nk-block-des text-soft">
+                    <p>Gestion du parc automobile.</p>
+                </div>
+            </div>
+            <div class="nk-block-head-content">
+                <div class="toggle-wrap nk-block-tools-toggle">
+                    <a href="#" class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu"><em class="icon ni ni-menu-alt-r"></em></a>
+                    <div class="toggle-expand-content" data-content="pageMenu">
+                        <ul class="nk-block-tools g-3">
+                            <li class="nk-block-tools-opt">
+                                <a href="#" class="btn btn-sm btn-dim btn-primary" data-toggle="modal" data-target="#create-vehicle">
+                                    <em class="icon ni ni-plus"></em>
+                                    <span> Ajouter un véhicule</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- .toggle-wrap -->
+            </div>
+        </div>
+    </div>
     <div class="nk-block">
         <div class="row g-gs">
             <div class="col-xxl-3 col-sm-4">
@@ -93,19 +118,6 @@
         </div>
     </div>
     <div class="nk-block nk-block-lg">
-        <div class="nk-block-head nk-block-head-sm">
-            <div class="nk-block-between">
-                <div class="nk-block-head-content">
-                    <h5 class="nk-block-title">
-                        <em class="icon ni ni-file-text"></em>
-                        Details sur le parc
-                    </h5>
-                    <div class="nk-block-des text-soft">
-                        <p>Ci-dessous la situation synthétisée du nombre des véhicule attélé, disponible ayant un chauffeur ou sans chauffeur</p>
-                    </div>
-                </div>
-            </div><!-- .nk-block-between -->
-        </div>
         <div class="row g-gs">
             <div class="col-xxl-3 col-sm-4">
                 <a href="{{ route('fleet.vehicle.state.unlinked-tractor') }}">
