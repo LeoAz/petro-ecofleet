@@ -37,42 +37,6 @@
                         <div class="nk-wg1">
                             <div class="nk-wg1-block">
                                 <div class="nk-wg1-img">
-                                    <img src="{{ asset('assets/images/maintenance/delete-file.png') }}" alt="">
-                                </div>
-                                <div class="nk-wg1-text">
-                                    <h5 class="title">Bon de sortie</h5>
-                                    <p>Vous trouverez dans ce module l'ensemble des bons de commande en stock des pièces de rechange.</p>
-                                </div>
-                            </div>
-                            <div class="nk-wg1-action">
-                                <a href="{{ route('maintenance.warehouse.exit.index') }}" class="link"><span>Gérer les devis</span> <em class="icon ni ni-chevron-right"></em></a>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- .col -->
-                <div class="col-md-4">
-                    <div class="card card-full shadow-sm">
-                        <div class="nk-wg1">
-                            <div class="nk-wg1-block">
-                                <div class="nk-wg1-img">
-                                    <img src="{{ asset('assets/images/maintenance/search.png') }}" alt="">
-                                </div>
-                                <div class="nk-wg1-text">
-                                    <h5 class="title">Bon d'entré</h5>
-                                    <p>Vous trouverez dans ce module l'ensemble des bons d'entré en stock des pièces de rechange.</p>
-                                </div>
-                            </div>
-                            <div class="nk-wg1-action">
-                                <a href="{{ route('maintenance.warehouse.entrance.index') }}" class="link"><span>Gérer les devis</span> <em class="icon ni ni-chevron-right"></em></a>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- .col -->
-                <div class="col-md-4">
-                    <div class="card card-full shadow-sm">
-                        <div class="nk-wg1">
-                            <div class="nk-wg1-block">
-                                <div class="nk-wg1-img">
                                     <img src="{{ asset('assets/images/maintenance/report.png') }}" alt="">
                                 </div>
                                 <div class="nk-wg1-text">

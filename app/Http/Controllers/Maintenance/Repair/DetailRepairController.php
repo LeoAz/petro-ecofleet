@@ -16,25 +16,24 @@ class DetailRepairController extends Controller
     public function store(Request $request, Repair $repair)
     {
         $attributes = $this->validate($request, [
-            'exit_voucher_id' => ['required'],
+            'part_id' => ['required'],
+            'qty' => ['required', 'numeric', 'min:0.01'],
         ],
             [
-            'exit_voucher_id.required' => 'le bon de sortie est obligatoire',
+                'part_id.required' => 'La pièce est obligatoire',
+                'qty.required' => 'La quantité est obligatoire',
+                'qty.numeric' => 'La quantité doit être un nombre',
+                'qty.min' => 'La quantité doit être supérieure à zéro',
             ]
         );
-        $exit = ExitVoucher::findOrFail($attributes['exit_voucher_id']);
 
-        foreach ( $exit->parts as $part)
-        {
-            DetailRepair::create([
-                'part_id' => $part->part_id,
-                'qty' => $part->qty,
-                'exit_voucher_id' => $part->exit_id,
-                'repair_id' => $repair->id
-            ]);
-        }
+        DetailRepair::create([
+            'part_id' => $attributes['part_id'],
+            'qty' => $attributes['qty'],
+            'repair_id' => $repair->id
+        ]);
 
-        flash()->info("Les pièces ont été ajouté avec succés à la fiche de reparation");
+        flash()->info("La pièce a été ajoutée avec succès à la fiche de réparation");
         return redirect()->back();
     }
 

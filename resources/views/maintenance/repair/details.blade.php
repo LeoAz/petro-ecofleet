@@ -133,7 +133,7 @@
                                 <a href="#" class="btn btn-sm btn-sm btn-dim btn-primary" data-toggle="modal" data-target="#create-state">
                                     <em class="icon ni ni-reports"></em>
                                     <span>
-                                    Bon de sortie à utiliser
+                                    Ajouter une pièce
                                 </span>
                                 </a>
                             </li>
@@ -226,7 +226,7 @@
                                             <div class="alert alert-pro alert-primary shadow-sm alert-icon bg-blue-dim">
                                                 <em class="icon ni ni-alert-circle"></em>
                                                 <p>
-                                                    Veuillez selectionner le bon de sortie à utiliser, les pieces de ce bon seront directement ajouter à la reparation
+                                                    Veuillez selectionner la pièce à utiliser et saisir la quantité.
                                                 </p>
                                             </div>
                                         </div>
@@ -234,14 +234,25 @@
                                 </div>
                                 <div class="col-sm-8">
                                     <div class="form-group">
-                                        <label class="form-label" for="default-01">Nom de la pièce</label>
+                                        <label class="form-label" for="default-01">Pièce de rechange</label>
                                         <div class="form-control-wrap" data-placeholder = "selectioner la pièce">
-                                            <select  name="exit_voucher_id" class="form-select @error('exit_voucher_id') error @enderror" id="default-03" data-search="on">
-                                                @foreach( $exits as  $exit)
-                                                    <option value="{{ $exit->id }}">{{ $exit->code }} - {{ $exit ? $exit->date->format('d/m/Y'): '-' }}</option>
+                                            <select  name="part_id" class="form-select @error('part_id') error @enderror" id="default-03" data-search="on">
+                                                @foreach( $parts as  $part)
+                                                    <option value="{{ $part->id }}">{{ $part->name }} (Stock: {{ $part->qty }})</option>
                                                 @endforeach
                                             </select>
-                                            @error('exit_voucher_id')
+                                            @error('part_id')
+                                            <span class="sub-text-sm text-danger ff-italic">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label class="form-label" for="default-01">Quantité</label>
+                                        <div class="form-control-wrap">
+                                            <input type="number" step="any" name="qty" class="form-control @error('qty') error @enderror" placeholder="Quantité">
+                                            @error('qty')
                                             <span class="sub-text-sm text-danger ff-italic">{{ $message }}</span>
                                             @enderror
                                         </div>

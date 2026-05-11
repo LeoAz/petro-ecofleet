@@ -109,24 +109,6 @@
                         <div class="nk-wg1">
                             <div class="nk-wg1-block">
                                 <div class="nk-wg1-img">
-                                    <img src="{{ asset('assets/images/maintenance/bill.png') }}" alt="">
-                                </div>
-                                <div class="nk-wg1-text">
-                                    <h5 class="title">Bon d'achat</h5>
-                                    <p>Ce module fait l'état de l'ensemble des bon d'achat sur les pieces piéces de rechanges.</p>
-                                </div>
-                            </div>
-                            <div class="nk-wg1-action">
-                                <a href="{{ route('maintenance.warehouse.purchase.index') }}" class="link"><span>Gérer les bons</span> <em class="icon ni ni-chevron-right"></em></a>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- .col -->
-                <div class="col-md-4">
-                    <div class="card card-full shadow-sm">
-                        <div class="nk-wg1">
-                            <div class="nk-wg1-block">
-                                <div class="nk-wg1-img">
                                     <img src="{{ asset('assets/images/maintenance/car-check.png') }}" alt="">
                                 </div>
                                 <div class="nk-wg1-text">

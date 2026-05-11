@@ -62,13 +62,11 @@ class RepairController extends Controller
 
     public function detail(Repair $repair)
     {
-        $exits = ExitVoucher::where('vehicle_id', $repair->vehicle_id)
-            ->where('status_exit', ExitVoucherStatus::Validated)
-            ->get();
+        $parts = Part::orderBy('name')->get();
 
         return view('maintenance.repair.details', [
             'repair' => $repair,
-            'exits' => $exits
+            'parts' => $parts
         ]);
     }
 
