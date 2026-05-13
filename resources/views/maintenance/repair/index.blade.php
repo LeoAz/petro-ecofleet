@@ -83,10 +83,10 @@
                                 <span> {{ $repair->motif->description ?? '-' }}</span>
                             </td>
                             <td class="nk-tb-col tb-col-md">
-                                {{ number_format($repair->amount, 0,',', ' ') }}
+                                {{ number_format($repair->amount, 0,',', ' ') }} CFA
                             </td>
                             <td class="nk-tb-col tb-col-md">
-                                {{ number_format($repair->total_amount, 0, ' ', ' ') }}
+                                {{ number_format($repair->total_amount, 0, ' ', ' ') }} CFA
                             </td>
                             <td class="nk-tb-col nk-tb-col-tools">
                                 <ul class="nk-tb-actions gx-1">

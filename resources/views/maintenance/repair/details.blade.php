@@ -178,11 +178,11 @@
                     </div>
                     <div class="nk-tb-col tb-col-lg">
                             <span class="tb-sub">
-                                  {{ number_format($detail->part->price, 0, ' ', ' ') }}
+                                  {{ number_format($detail->part->price, 0, ' ', ' ') }} CFA
                             </span>
                     </div>
                     <div class="nk-tb-col">
-                        <span>{{ number_format($detail->part->price *  $detail->qty, 0, ' ', ' ' ) }}</span>
+                        <span>{{ number_format($detail->part->price *  $detail->qty, 0, ' ', ' ' ) }} CFA</span>
                     </div>
 
                     <div class="nk-tb-col">

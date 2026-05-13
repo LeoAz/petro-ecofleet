@@ -179,7 +179,7 @@ class ReportingController extends Controller
                 ->whereYear('date_expense', $year)
                 ->get();
 
-            $repairs = Maintenance::whereMonth('date', $month->month)
+            $repairs = Repair::whereMonth('date', $month->month)
                 ->whereYear('date', $year)
                 ->get();
 
@@ -243,7 +243,7 @@ class ReportingController extends Controller
                 ->whereYear('date_expense', now()->year)
                 ->get();
 
-            $repairs = Maintenance::whereMonth('date', now()->month)
+            $repairs = Repair::whereMonth('date', now()->month)
                 ->whereYear('date', now()->year)
                 ->get();
 
@@ -293,7 +293,7 @@ class ReportingController extends Controller
                 ->whereYear('date_expense', $year)
                 ->get();
 
-            $repairs = Maintenance::whereMonth('date', $month->month)
+            $repairs = Repair::whereMonth('date', $month->month)
                 ->whereYear('date', $year)
                 ->get();
 
@@ -357,7 +357,7 @@ class ReportingController extends Controller
                 ->whereYear('date_expense', now()->year)
                 ->get();
 
-            $repairs = Maintenance::whereMonth('date', now()->month)
+            $repairs = Repair::whereMonth('date', now()->month)
                 ->whereYear('date', now()->year)
                 ->get();
 
@@ -403,7 +403,7 @@ class ReportingController extends Controller
             $expenses = Expense::whereYear('date_expense', $year)
                 ->get();
 
-            $repairs = Maintenance::whereYear('date', $year)
+            $repairs = Repair::whereYear('date', $year)
                 ->get();
 
             $others = OtherExpense::whereYear('date', $year)
@@ -457,7 +457,7 @@ class ReportingController extends Controller
             $expenses = Expense::whereYear('date_expense', now()->year)
                 ->get();
 
-            $repairs = Maintenance::whereYear('date', now()->year)
+            $repairs = Repair::whereYear('date', now()->year)
                 ->get();
 
             $others = OtherExpense::whereYear('date', now()->year)
@@ -501,7 +501,7 @@ class ReportingController extends Controller
             $expenses = Expense::whereYear('date_expense', $year)
                 ->get();
 
-            $repairs = Maintenance::whereYear('date', $year)
+            $repairs = Repair::whereYear('date', $year)
                 ->get();
 
             $others = OtherExpense::whereYear('date', $year)
@@ -555,7 +555,7 @@ class ReportingController extends Controller
             $expenses = Expense::whereYear('date_expense', now()->year)
                 ->get();
 
-            $repairs = Maintenance::whereYear('date', now()->year)
+            $repairs = Repair::whereYear('date', now()->year)
                 ->get();
 
             $others = OtherExpense::whereYear('date', now()->year)

@@ -103,7 +103,7 @@
                                                 <div class="profile-ud wider">
                                                     <span class="profile-ud-label">Coût de la réparation</span>
                                                     <span class="profile-ud-value">
-                                                        {{ number_format($repair->amount, 0, ' ', ' ') }}
+                                                        {{ number_format($repair->amount, 0, ' ', ' ') }} CFA
                                                     </span>
                                                 </div>
                                             </div>
@@ -144,10 +144,10 @@
                                                 <td class="nk-tb-col tb-col-md"><span>{{ $detail->part->name }}</span></td>
                                                 <td class="nk-tb-col tb-col-md"><span> {{ $detail->qty }}</span></td>
                                                 <td class="nk-tb-col tb-col-md">
-                                                    <span> {{ number_format($detail->part->price, 0, ' ', ' ') }}</span>
+                                                    <span> {{ number_format($detail->part->price, 0, ' ', ' ') }} CFA</span>
                                                 </td>
                                                 <td class="nk-tb-col tb-col-md">
-                                                    <span>{{ number_format($detail->part->price *  $detail->qty, 0, ' ', ' ' ) }}</span>
+                                                    <span>{{ number_format($detail->part->price *  $detail->qty, 0, ' ', ' ' ) }} CFA</span>
                                                 </td>
                                             </tr><!-- .nk-tb-item  -->
                                         @endforeach
