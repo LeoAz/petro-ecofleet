@@ -37,6 +37,7 @@ use App\Http\Controllers\Exploitation\Trip\ExpenseController;
 use App\Http\Controllers\Exploitation\Trip\FolderClosedController;
 use App\Http\Controllers\Exploitation\Trip\FolderController;
 use App\Http\Controllers\Exploitation\Trip\FolderOngoingController;
+use App\Http\Controllers\Exploitation\Trip\FolderWaitingLoadController;
 use App\Http\Controllers\Exploitation\Trip\FolderUnbiledController;
 use App\Http\Controllers\Exploitation\Trip\FuelController;
 use App\Http\Controllers\Exploitation\Trip\LoadController;
@@ -453,6 +454,8 @@ Route::group(['middleware' => 'auth'], function () {
                         'as' =>'status.'
                     ], function () {
                         Route::get('/ongoing', FolderOngoingController::class)->name('ongoing');
+                        Route::get('/waiting-load', FolderWaitingLoadController::class)->name('waiting_load');
+                        Route::get('/waiting-load/print', [FolderWaitingLoadController::class, 'print'])->name('waiting_load.print');
                         Route::get('/closed', FolderClosedController::class)->name('closed');
                         Route::get('/unbilled', FolderUnbiledController::class)->name('unbilled');
                     });
